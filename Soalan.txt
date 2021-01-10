@@ -1,2 +1,2 @@
 Apa itu socket?
-Port number for SSH?
+Nombor port untuk SSH?
