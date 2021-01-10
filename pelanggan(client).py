@@ -1,7 +1,7 @@
 from socket import *
 import os
 
-
+#setup class
 def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -30,15 +30,15 @@ while True:
                 print "Ok, berikan jawapan baru!\n"
                 continue
         elif jawapan == "exit":
-            clientSocket.close()
+            pelangganSocket.close()
             exit(0)
         else:
-            clientSocket.send(answer)
-        cls()  # to clear terminal
-        message = clientSocket.recv(1024)
+            pelangganSocket.send(jawapan)
+        cls() 
+        message = pelangganSocket.recv(1024)
 
         print message
 
     except:
-        clientSocket.close()
+        pelangganSocket.close()
         exit(0)
