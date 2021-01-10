@@ -31,3 +31,8 @@ from socket import *
             connectionSocket, addr = serverSocket.accept()
 
             threading.Thread(target=self.listenToClient, args=(connectionSocket, addr)).start()
+            
+if __name__ == "__main__":
+    serverName = " "
+    serverPort = 8000
+    ThreadedServer(serverPort, serverName)
