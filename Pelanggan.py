@@ -19,21 +19,21 @@ print message
 while True:
 
     try:
-        jawapan = raw_input('Isi mesej:')
+        Jawapan = raw_input('Isi mesej:')
 
         if message[1:9] == "Soalan":
             soalan2 = raw_input("Simpan jawapan? (Y/N):")
 
-            if soalan0] == 'Y' or jawapan2[0] == 'y':
-                pelangganSocket.send(jawapan)
+            if soalan0] == 'Y' or Jawapan2[0] == 'y':
+                pelangganSocket.send(Jawapan)
             else:
                 print "Ok, berikan jawapan baru!\n"
                 continue
-        elif jawapan == "exit":
+        elif Jawapan == "exit":
             pelangganSocket.close()
             exit(0)
         else:
-            pelangganSocket.send(jawapan)
+            pelangganSocket.send(Jawapan)
         cls() 
         message = pelangganSocket.recv(1024)
 
