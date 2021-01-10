@@ -7,7 +7,7 @@ pelayanPort = 8080
 
 pelangganSocket = socket(AF_INET, SOCK_STREAM)
 
-pelangganSocket.connect((serverName, serverPort))
+pelangganSocket.connect((pelayanName, pelayanPort))
 
 message = clientSocket.recv(1024)  # for welcome and authentication info
 print message
