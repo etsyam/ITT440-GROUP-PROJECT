@@ -10,15 +10,15 @@ class ThreadedServer():
         global i
         while True:
             pelanggan.send("Welcome to the quiz \n") 
-            authentication = client.recv(1024) 
+            authentication = pelanggan.recv(1024) 
 
             pelanggan.send("Username: ")
-            m1 = client.recv(1024) 
+            m1 = pelanggan.recv(1024) 
 
             name= m1
 
             pelanggan.send("Enter the passcode: ")
-            password = client.recv(1024) 
+            password = pelanggan.recv(1024) 
 
             print "Username: ", name
             print "Password: ", password
@@ -52,8 +52,8 @@ class ThreadedServer():
 
                     
                     score = 0
-                    for number in range(0, len(Jawapan)): 
-	                    planggan.send(Jawapan[number])
+                    for number in range(0, len(Soalan)): 
+	                    pelanggan.send(Soalan[number])
 	                    Jawapan = pelanggan.recv(1024)
 	                    if Jawapan.lower() == Jawapan[number]:
 	                    	score = score + 10
@@ -67,9 +67,9 @@ class ThreadedServer():
                         print "Your time is up!\n"
                         pelanggan.close()
                    
-                    print name, surname, "Markah: ", str(score), "Markah Bonus: ",  str(10/(timestamp+1)), "Total Markah: ",str(score + 10/(timestamp+1))
+                    print name, "Markah: ", str(score), "Markah Bonus: ",  str(10/(timestamp+1)), "Total Markah: ",str(score + 10/(timestamp+1))
             else:
-               pelanggan.send(Authentications cannot be done.\n")
+               pelanggan.send("Authentications cannot be done.\n")
 
             i = i + 1
             file.close()
