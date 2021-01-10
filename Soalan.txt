@@ -1,3 +1,3 @@
-Apa itu socket?
-Nombor port untuk SSH?
+What is socket?
+Port number for SSH?
 A signal may be generated asynchronously or synchronously. (Yes/No)
