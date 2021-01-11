@@ -46,7 +46,7 @@ def clientthread(conn, addr):
 
                 elif bzr[0] ==1 and conn==client[0]:
                         bol = message[0] == A[bzr[2]][0]
-                        print A[bzr[2]][0]
+                        print (A[bzr[2]][0])
                         if bol:
                             broadcast("player" + str(client[1]+1) + " +1" + "\n\n")
                             Count[i] += 1
@@ -56,7 +56,7 @@ def clientthread(conn, addr):
                                 sys.exit()
 
                         else:
-                            broadcast("player" + str(client[1]+1) + " -1" + "\n\n")
+                            broadcast("player" + str(client[1]+1) + " +0" + "\n\n")
                             Count[i] += 0
                         bzr[0]=0
                         if len(Q) != 0:
@@ -103,7 +103,7 @@ while True:
     conn, addr = server.accept()
     list_of_clients.append(conn)
     Count.append(0)
-    print addr[0] + " connected"
+    print (addr[0] + " connected")
     start_new_thread(clientthread,(conn,addr))
     if(len(list_of_clients)==3):
         quiz()
