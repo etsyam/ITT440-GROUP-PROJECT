@@ -3,9 +3,6 @@ import select
 import sys
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-if len(sys.argv) != 3:
-    print "Print in the following order : script, IP address, port number"
-    exit()
 
 ip_addr = "192.168.1.39"
 port = 8080
@@ -13,7 +10,7 @@ server.connect((ip_addr, port))
 
 while True:
 
-    # maintains a list of possible input streams
+    
     sockets_list = [sys.stdin, server]
 
     read_sockets,write_socket, error_socket = select.select(sockets_list,[],[])
@@ -21,7 +18,7 @@ while True:
     for socks in read_sockets:
         if socks == server:
             message = socks.recv(2048)
-            print message
+            print (message)
         else:
             message = sys.stdin.readline()
             server.send(message)
