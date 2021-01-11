@@ -9,8 +9,6 @@ port = 8080
 server.connect((ip_addr, port))
 
 while True:
-
-    
     sockets_list = [sys.stdin, server]
 
     read_sockets,write_socket, error_socket = select.select(sockets_list,[],[])
