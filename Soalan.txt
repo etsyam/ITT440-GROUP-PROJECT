@@ -1,4 +1,0 @@
-What is socket?
-Port number for SSH?
-A signal may be generated asynchronously or synchronously. (Yes/No)
-What is pipe character in Linux?
