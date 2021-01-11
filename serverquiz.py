@@ -29,7 +29,7 @@ client = ["address",-1]
 bzr =[0, 0, 0]
 
 def clientthread(conn, addr):
-    conn.send("\nWelcome to Karhut! Answer the questions before any other players!\n Press any key on the keyboard and ENTER as a buzzer for the given question\n")
+    conn.send("\nSelamat Datang ke Kahuurr Kuiz! Sila jawab soalan sebelum player lain cuba menjawab!!\n Press any key on the keyboard and ENTER as a buzzer for the given question\n")
     
     while True:
             message = conn.recv(2048)
