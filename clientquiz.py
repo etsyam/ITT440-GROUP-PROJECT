@@ -21,5 +21,6 @@ while True:
             message = sys.stdin.readline()
             server.send(message)
             sys.stdout.flush()
+            
 server.close()
 sys.exit()
