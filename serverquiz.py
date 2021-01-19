@@ -7,7 +7,7 @@ import random
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-ip_add="192.168.1.39"
+ip_address="192.168.1.39"
 port= 8080
 server.bind((ip_address, port))
 server.listen(100)
