@@ -1,4 +1,4 @@
-import socket
+from socket import *
 import select
 from thread import *
 import sys
