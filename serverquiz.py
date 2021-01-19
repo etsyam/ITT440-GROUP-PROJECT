@@ -9,7 +9,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 ip_add="192.168.1.39"
 port= 8080
-server.bind((ip_add, port))
+server.bind((ip_address, port))
 server.listen(100)
 
 list_of_clients=[]
@@ -30,8 +30,8 @@ def clientthread(conn, addr):
     conn.send("\nSelamat Datang ke Kahuurr Kuiz! Sila jawab soalan sebelum pemain lain cuba menjawab!!\n Tekan apa sahaja key di papan kekunci anda dan tekan enter untuk buzzer\n")
     
     while True:
-            message = conn.recv(2048)
-            if message:
+            mesej = conn.recv(2048)
+            if mesej:
                 if buzzer[0]==0:
                     client[0] = conn
                     buzzer[0] = 1
@@ -43,7 +43,7 @@ def clientthread(conn, addr):
                     client[1] = i
 
                 elif buzzer[0] ==1 and conn==client[0]:
-                        kira = message[0] == jawapan[buzzer[2]][0]
+                        kira = mesej[0] == jawapan[buzzer[2]][0]
                         print (jawapan[buzzer[2]][0])
                         if kira:
                             broadcast("Pemain" + str(client[1]+1) + " +1" + "\n\n")
@@ -69,10 +69,10 @@ def clientthread(conn, addr):
             else:
                     tamat(conn)
 
-def broadcast(message):
+def broadcast(mesej):
     for clients in list_of_clients:
         try:
-            clients.send(message)
+            clients.send(mesej)
         except:
             clients.close()
             tamat(clients)
